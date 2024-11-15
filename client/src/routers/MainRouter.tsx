@@ -1,7 +1,7 @@
 import React from "react";
 import HomeScreen from "@/screens/HomeScreen";
 import {Layout} from "antd";
-import SliderComponent from "@/components/SliderComponent";
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import InventoryScreen from "@/screens/InventoryScreen";
 import DashboardScreen from "@/screens/DashboardScreen";
@@ -9,6 +9,7 @@ import ManageStoreScreen from "@/screens/ManageStoreScreen";
 import SupplierScreen from "@/screens/SupplierScreen";
 import ReportScreen from "@/screens/ReportScreen";
 import OrderScreen from "@/screens/OrderScreen";
+import {HeaderComponent, SliderComponent} from "@/components";
 
 export default function MainRouter() {
     const {Content, Footer, Header} = Layout
@@ -16,8 +17,8 @@ export default function MainRouter() {
         <Layout>
             <SliderComponent/>
             <Layout>
-                <Header/>
-                <Content>
+                <HeaderComponent/>
+                <Content className={'mt-3 mb-2 bg-black container'}>
                     <Routes>
                         <Route path="/" element={<HomeScreen/>}/>
                         <Route path="/inventory" element={<InventoryScreen/>}/>

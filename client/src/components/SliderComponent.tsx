@@ -49,7 +49,7 @@ const SliderComponent = () => {
         }
     ]
     return (
-        <Sider theme={'light'}>
+        <Sider width={280} className={'ha'} theme={'light'} style={{height: '100vh', borderBottomRightRadius: '8px', borderTopRightRadius: '8px', marginRight: '1rem'}}>
             <div className="p-2 d-flex align-items-center gap-2">
                 <img
                     width={60}
@@ -59,7 +59,7 @@ const SliderComponent = () => {
                 <Text style={{
                     fontWeight: 'bold',
                     fontSize: '1.2rem',
-                    color: colors.primary_500,
+                    color: colors.primary500,
                 }}>{LogoInfo.title}</Text>
             </div>
             <Menu items={items} theme={'light'}/>
