@@ -1,4 +1,4 @@
 export const colors = {
     primary500: '#1570ef',
-    grey600: '#5d5569'
+    gray600: '#5d5569'
 }

@@ -13,9 +13,9 @@ type propsType = {
 
 const provider = new GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-provider.setCustomParameters({
-    'login_hint': 'trinhxuanha8862@gmail.com'
-});
+// provider.setCustomParameters({
+//     'login_hint': 'trinhxuanha8862@gmail.com'
+// });
 export default function SocialLogin({isRemember}: propsType) {
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
@@ -28,7 +28,8 @@ export default function SocialLogin({isRemember}: propsType) {
                 if (user) {
                     const data = {
                         name: user.displayName,
-                        email: user.email
+                        email: user.email,
+                        photoUrl: user.photoURL
                     }
                     const api = '/auth/google-login'
                     try {

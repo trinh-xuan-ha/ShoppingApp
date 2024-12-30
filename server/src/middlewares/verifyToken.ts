@@ -6,7 +6,7 @@ const verifyToken = (req: any, res: any, next: any) => {
     console.log("Access Token:", accessToken);
     try {
         if (!accessToken) {
-            res.status(401).json({error: 'no access'})
+            return res.status(401).json({error: 'no access'})
         }
         // console.log(accessToken);
         const verifiedToken: any = jwt.verify(

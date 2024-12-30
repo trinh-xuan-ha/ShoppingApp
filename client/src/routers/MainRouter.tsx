@@ -1,6 +1,6 @@
 import React from "react";
 import HomeScreen from "@/screens/HomeScreen";
-import {Layout} from "antd";
+import {Affix, Layout} from "antd";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import InventoryScreen from "@/screens/InventoryScreen";
@@ -15,10 +15,14 @@ export default function MainRouter() {
     const {Content, Footer, Header} = Layout
     return <BrowserRouter>
         <Layout>
-            <SliderComponent/>
+            <Affix offsetTop={0}>
+                <SliderComponent/>
+            </Affix>
             <Layout>
-                <HeaderComponent/>
-                <Content className={'mt-3 mb-2 bg-black container'}>
+                <Affix offsetTop={0}>
+                    <HeaderComponent/>
+                </Affix>
+                <Content className={'mt-3 mb-2 bg-white container'}>
                     <Routes>
                         <Route path="/" element={<HomeScreen/>}/>
                         <Route path="/inventory" element={<InventoryScreen/>}/>
